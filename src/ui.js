@@ -28,6 +28,9 @@ export default class Ui {
       caption: make('div', [this.CSS.input, this.CSS.caption], {
         contentEditable: !this.readOnly,
       }),
+      alt: make('div', [this.CSS.input, this.CSS.alt], {
+        contentEditable: !this.readOnly,
+      })
     };
 
     /**
@@ -37,13 +40,16 @@ export default class Ui {
      *      <image-preloader />
      *    </image-container>
      *    <caption />
+     *    <alt />
      *    <select-file-button />
      *  </wrapper>
      */
     this.nodes.caption.dataset.placeholder = this.config.captionPlaceholder;
+    this.nodes.alt.dataset.placeholder = this.config.altPlaceholder;
     this.nodes.imageContainer.appendChild(this.nodes.imagePreloader);
     this.nodes.wrapper.appendChild(this.nodes.imageContainer);
     this.nodes.wrapper.appendChild(this.nodes.caption);
+    this.nodes.wrapper.appendChild(this.nodes.alt);
     this.nodes.wrapper.appendChild(this.nodes.fileButton);
   }
 
@@ -67,6 +73,7 @@ export default class Ui {
       imagePreloader: 'image-tool__image-preloader',
       imageEl: 'image-tool__image-picture',
       caption: 'image-tool__caption',
+      alt: 'image-tool__alt'
     };
   };
 
@@ -223,6 +230,18 @@ export default class Ui {
       this.nodes.caption.innerHTML = text;
     }
   }
+
+  /**
+   * Shows alt input
+   *
+   * @param {string} text - alt text
+   * @returns {void}
+   */
+     fillAll(text) {
+      if (this.nodes.alt) {
+        this.nodes.alt.innerHTML = text;
+      }
+    }
 
   /**
    * Changes UI status
