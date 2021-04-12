@@ -237,11 +237,11 @@ export default class Ui {
    * @param {string} text - alt text
    * @returns {void}
    */
-    fillAlt(text) {
-      if (this.nodes.alt) {
-        this.nodes.alt.innerHTML = text;
-      }
+  fillAlt(text) {
+    if (this.nodes.alt) {
+      this.nodes.alt.innerHTML = text;
     }
+  }
 
   /**
    * Changes UI status

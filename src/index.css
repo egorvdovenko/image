@@ -44,6 +44,8 @@
   }
 
   &__caption {
+    margin-bottom: 10px;
+
     &[contentEditable="true"][data-placeholder]::before {
       position: absolute !important;
       content: attr(data-placeholder);
