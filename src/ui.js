@@ -237,7 +237,7 @@ export default class Ui {
    * @param {string} text - alt text
    * @returns {void}
    */
-     fillAll(text) {
+    fillAlt(text) {
       if (this.nodes.alt) {
         this.nodes.alt.innerHTML = text;
       }
